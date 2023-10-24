@@ -1,0 +1,22 @@
+﻿@model EmployeeViewModel
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update New Employee</h1>
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    <input hidden asp-for="Id" /> 
+    <input hidden asp-for="ImageName"/>
+
+    <div asp-validation-summary="All"></div>
+    <partial name="PartialViews/CreateEditEmployeePartialView" />
+    <input type="submit" value="save" class="btn btn-primary" />
+    <a asp-action="Index" class="btn btn-light">Back to List</a>
+
+</form>
+@section ValidationSection{
+    <partial name="_ValidationScriptsPartial" />
+
+}
+
